@@ -1,27 +1,16 @@
-import { useState } from "react";
-import "./index.css";
-import NavBar from "./components/NavBar";
-import Content from "./components/Content";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./LandingPage";
+import Page2 from "./Page2";
 
-function App() {
+function App2() {
   return (
-    <>
-      <NavBar />
-
-      <section className="flex flex-col justify-center items-center gap-36 mt-20">
-        {/* Component 1, 2, 3 */}
-        <h1 className="font-sans text-3xl font-semibold flex items-center">
-          BELAJAR <span className="text-blue-400 ml-2">DEK</span>, JANGAN
-          REBAHAN AJA!
-        </h1>
-
-        <div className="flex justify-center items-center gap-5">
-          <Content>useState</Content>
-          <Content>useReduce</Content>
-        </div>
-      </section>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/page2" element={<Page2 />} />
+      </Routes>
+    </Router>
   );
 }
 
-export default App;
+export default App2;
