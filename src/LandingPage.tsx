@@ -4,6 +4,8 @@ import NavBar from "./components/NavBar";
 import Content from "./components/Content";
 import Modal from "./components/Modal";
 import reactLogo from './assets/react.svg';
+import UseState from "./components/UseState";
+// import UseReducer from "./components/UseReducer";
 
 
 
@@ -18,6 +20,11 @@ const LandingPage: React.FC = () => {
     useContext: "useContext provides a way to pass data through the component tree.",
     useRef: "useRef accesses DOM elements or keeps mutable references."
   };
+
+  const hookExamples: Record<string, any> = {
+    useState: <UseState/>
+    // useReducer: <UseReducer />
+  }
 
   const openModal = (hookName: string) => {
     setCurrentHook(hookName);
@@ -57,6 +64,7 @@ const LandingPage: React.FC = () => {
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <h2 className="text-xl font-semibold mb-4">{currentHook}</h2>
         <p>{hookDetails[currentHook]}</p>
+        <div>{hookExamples[currentHook]}</div>
       </Modal>
     </>
   );

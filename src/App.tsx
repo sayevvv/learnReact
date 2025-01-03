@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import Page2 from "./Page2";
 
-function App2() {
+function App() {
   return (
     <Router>
       <Routes>
@@ -13,4 +13,4 @@ function App2() {
   );
 }
 
-export default App2;
+export default App;
