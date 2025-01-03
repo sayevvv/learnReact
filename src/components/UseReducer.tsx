@@ -1,32 +1,75 @@
-import React, { useReducer } from "react";
+import { useReducer, useState } from "react";
 
-// Saya akan belajar useReducer
-
-type State = {
-  count: number;
+// Define types
+type Data = {
+  id: number; // Unique identifier
+  nama: string;
+  alamat: string;
 };
 
-type Action = { type: "INCREMENT" } | { type: "DECREMENT" };
+type DataState = {
+  datas: Data[];
+};
 
-const reducer = (state: State, action: Action): State => {
+type DataAction =
+  | { type: "ADD_DATA"; payload: string }
+  | { type: "REMOVE_DATA"; payload: number };
+
+const reducer = (state: DataState, action: DataAction): DataState => {
   switch (action.type) {
-    case "INCREMENT":
-      return { count: state.count + 1 };
-    case "DECREMENT":
-      return { count: state.count - 1 };
+    case "ADD_DATA":
+      return {
+        ...state,
+        datas: [
+          ...state.datas,
+          { id: Date.now(), nama: action.payload, alamat: "" },
+        ],
+      };
+    case "REMOVE_DATA":
+      return {
+        ...state,
+        datas: state.datas.filter((data) => data.id !== action.payload),
+      };
     default:
-      throw new Error("Action tidak dikenali!");
+      return state;
   }
 };
 
 const UseReducer = () => {
-  const [state, dispatch] = useReducer(reducer, { count: 0 });
+  const [state, dispatch] = useReducer(reducer, { datas: [] });
+  const [text, setText] = useState<string>("");
 
-  return <div>
-    <h1>Count: {state.count}</h1>
-    <button onClick={() => dispatch({ type:"INCREMENT"})}>Increment</button>
-    <button onClick={() => dispatch({ type:"DECREMENT"})}>Decrement</button>
-  </div>;
+  const handleAdd = () => {
+    if (text.trim() !== "") {
+      dispatch({ type: "ADD_DATA", payload: text });
+      setText(""); // Clear the input field
+    }
+  };
+
+  const handleRemove = (id: number) => {
+    dispatch({ type: "REMOVE_DATA", payload: id });
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Enter name"
+      />
+      <button onClick={handleAdd}>Add Data</button>
+
+      <ul>
+        {state.datas.map((data) => (
+          <li key={data.id}>
+            {data.nama}{" "}
+            <button onClick={() => handleRemove(data.id)}>Remove</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default UseReducer;
