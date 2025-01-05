@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Content from "./components/Content";
@@ -6,6 +6,7 @@ import Modal from "./components/Modal";
 import reactLogo from './assets/react.svg';
 import UseState from "./components/UseState";
 import UseReducer from "./components/UseReducer";
+import UseEffect from "./components/UseEffect";
 
 
 
@@ -23,7 +24,8 @@ const LandingPage: React.FC = () => {
 
   const hookExamples: Record<string, any> = {
     useState: <UseState/>,
-    useReducer: <UseReducer />
+    useReducer: <UseReducer />,
+    useEffect: <UseEffect />
   }
 
   const openModal = (hookName: string) => {
@@ -58,7 +60,7 @@ const LandingPage: React.FC = () => {
         </section>
       </section>
 
-      <Link to="/page2" className="flex items-center justify-center mt-20">Go to Page 2</Link>
+      <Link to="/page2" className="flex items-center justify-center mt-20 hover:text-violet-500">Go to Page 2</Link>
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
