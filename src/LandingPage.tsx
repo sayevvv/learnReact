@@ -5,7 +5,7 @@ import Content from "./components/Content";
 import Modal from "./components/Modal";
 import reactLogo from './assets/react.svg';
 import UseState from "./components/UseState";
-// import UseReducer from "./components/UseReducer";
+import UseReducer from "./components/UseReducer";
 
 
 
@@ -22,8 +22,8 @@ const LandingPage: React.FC = () => {
   };
 
   const hookExamples: Record<string, any> = {
-    useState: <UseState/>
-    // useReducer: <UseReducer />
+    useState: <UseState/>,
+    useReducer: <UseReducer />
   }
 
   const openModal = (hookName: string) => {
