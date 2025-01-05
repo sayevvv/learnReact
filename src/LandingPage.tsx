@@ -32,9 +32,9 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <>
+    <div>
       <NavBar />
-      <section className="flex flex-col justify-center items-center gap-36 mt-20">
+      <section className="flex flex-col justify-center items-center gap-20 mt-20 bg-slate-50 border-2 border-slate-400 py-10 mx-8 rounded-2xl">
         <h1 className="font-sans text-3xl font-semibold flex items-center">
           BELAJAR <span className="text-blue-400 ml-2">DEK</span>, JANGAN
           REBAHAN AJA!
@@ -66,7 +66,7 @@ const LandingPage: React.FC = () => {
         <p>{hookDetails[currentHook]}</p>
         <div>{hookExamples[currentHook]}</div>
       </Modal>
-    </>
+    </div>
   );
 };
 

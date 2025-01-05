@@ -13,7 +13,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50">
       <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
         <button
-          className="absolute top-2 right-2 text-white hover:text-gray-600"
+          className=" w-full flex justify-end text-black hover:text-gray-600"
           onClick={onClose}
         >
           ✕

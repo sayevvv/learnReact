@@ -51,20 +51,25 @@ const UseReducer = () => {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="Enter name"
-      />
-      <button onClick={handleAdd}>Add Data</button>
+    <div className="py-4">
+      <section className="flex justify-between">
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Enter name"
+          className=""
+        />
+        <button onClick={handleAdd} className="text-blue-800">
+          Add Data
+        </button>
+      </section>
 
-      <ul>
+      <ul className="">
         {state.datas.map((data) => (
-          <li key={data.id}>
+          <li key={data.id} className="flex justify-between">
             {data.nama}{" "}
-            <button onClick={() => handleRemove(data.id)}>Remove</button>
+            <button className="text-red-500" onClick={() => handleRemove(data.id)}>Remove</button>
           </li>
         ))}
       </ul>
