@@ -6,8 +6,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
         <Route path="/page2" element={<Page2 />} />
+        <Route path="/" element={<LandingPage />} />
       </Routes>
     </Router>
   );

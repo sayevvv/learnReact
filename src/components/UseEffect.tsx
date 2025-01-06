@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+
+// next buat async, tapi nanti aja
+
 const UseEffect = () => {
   const [satu, tambahSatu] = useState(-1);
   const [dua, tambahDua] = useState(-1);
