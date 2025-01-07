@@ -1,5 +1,3 @@
-import React from "react";
-
 const NavBar = () => {
 
 
@@ -27,7 +25,7 @@ const NavBar = () => {
             </svg>
           </button>
         </div>
-        <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
+        <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 :mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
           <li>
             <a className="text-sm text-gray-400 hover:text-gray-500" href="#">
               Home

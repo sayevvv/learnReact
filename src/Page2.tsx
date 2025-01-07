@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
 
 const Page2: React.FC = () => {
@@ -8,7 +7,7 @@ const Page2: React.FC = () => {
     <>
       <div className="min-h-screen flex flex-col md:flex-row max-h-[400px] overflow-y-auto">
         <div className="flex-1">
-          <SideBar></SideBar>
+          <SideBar exitLink="/"/>
         </div>
         {/* main content */}
         <div className="flex-2 lg:overflow-y-auto md:w-[calc(100%-5rem)] lg:w-[calc(100%-16rem)] p-4 md:p-6 pt-8 bg-white/60 md:bg-transparent">
@@ -60,10 +59,10 @@ const Page2: React.FC = () => {
               </p>
             </section>
             <Link
-                    to="/"
+                    to="/page3"
                     className="flex items-center justify-center mt-20 hover:text-violet-500"
                   >
-                    Back to LandingPage
+                    Go to page 3
                   </Link>
           </div>
         </div>

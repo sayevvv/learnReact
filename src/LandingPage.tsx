@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Content from "./components/Content";
 import Modal from "./components/Modal";
 import reactLogo from "./assets/react.svg";
 import UseState from "./components/UseState";
