@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SideBar from "./components/SideBar";
+import TaskManager from "./components/TaskManager";
+import AppContext from "./components/Context/AppContext";
 
 const Page2: React.FC = () => {
   return (
@@ -20,11 +22,12 @@ const Page2: React.FC = () => {
             </header>
             <section className=" bg-white rounded-lg shadow-lg p-6">
               <h2 className="text-2xl font-semibold mb-4">Content 1</h2>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-3">
                 Discover a variety of tools and techniques to streamline your
                 workflow and enhance productivity. From project management to
                 creative design, explore endless possibilities.
               </p>
+              <TaskManager judul="Task Manager" />
             </section>
             <section className="bg-white rounded-lg shadow-lg p-6">
               <h2 className="text-2xl font-semibold mb-4">Content 2</h2>
@@ -33,6 +36,7 @@ const Page2: React.FC = () => {
                 technologies shaping the future. Stay ahead and innovate with
                 confidence.
               </p>
+              <AppContext />
             </section>
             <section className="bg-white rounded-lg shadow-lg p-6">
               <h2 className="text-2xl font-semibold mb-4">Content 2</h2>

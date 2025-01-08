@@ -31,9 +31,9 @@ const TaskManager = ({judul} : TaskManagerProps) => {
 
   return (
     <>
-    <h1 className="text-xl font-semibold">{judul}</h1>
+    <h1 className="text-xl font-semibold mb-3">{judul}</h1>
     <section className="flex flex-col items-center font-semibold px-2 py-10 border rounded-xl w-max gap-2">
-        <p>Task Exercise</p>
+        <p>Add your task</p>
         <ul>
           {task.map((t, i) => (
             <li key={i} className="flex flex-col gap-2">
@@ -73,7 +73,7 @@ const TaskManager = ({judul} : TaskManagerProps) => {
         <input
           type="text"
           placeholder="terserah lu bang"
-          className="bg-slate-50 px-3 py-1 rounded-xl"
+          className="bg-slate-50 px-3 py-1 rounded-xl text-center border"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
