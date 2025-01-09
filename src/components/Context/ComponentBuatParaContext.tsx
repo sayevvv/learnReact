@@ -1,6 +1,7 @@
 import React from 'react'
 import AnakDua from './anakComponent/AnakDua'
 import AnakSatu from './anakComponent/AnakSatu'
+import AnakTiga from './anakComponent/AnakTiga'
 
 
 const ComponentBuatParaContext = () => {
@@ -8,6 +9,7 @@ const ComponentBuatParaContext = () => {
     <div>
       <AnakDua />
       <AnakSatu />
+      <AnakTiga />
     </div>
   )
 }
