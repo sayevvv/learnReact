@@ -6,8 +6,10 @@ import reactLogo from "./assets/react.svg";
 import UseState from "./components/UseState";
 import UseReducer from "./components/UseReducer";
 import UseEffect from "./components/UseEffect";
+import { useTheme } from "./theme/ThemeContext";
 
 const LandingPage: React.FC = () => {
+  const { theme, toggleTheme } = useTheme();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentHook, setCurrentHook] = useState("");
 
@@ -33,8 +35,25 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <>
+    <div className={`flex flex-col items-center justify-center min-h-screen transition-colors duration-300 ${
+      theme === "light" ? "bg-white" : "bg-gray-900"
+    }`}>
       <NavBar />
+      <div className="flex flex-col items-center justify-center min-h-screen transition-colors duration-300">
+        <h1 className="text-3xl font-bold mb-4">
+          Current Theme: <span className="capitalize">{theme}</span>
+        </h1>
+        <button
+          className={`px-4 py-2 rounded ${
+            theme === "light"
+              ? "bg-blue-500 text-white hover:bg-blue-600"
+              : "bg-gray-800 text-gray-200 hover:bg-gray-700"
+          }`}
+          onClick={toggleTheme}
+        >
+          Toggle Theme
+        </button>
+      </div>
       <div className="flex justify-center">
         <section className="flex flex-col justify-center items-center gap-20 mt-20 bg-slate-50 border-2 border-slate-400 py-10 w-max px-8 rounded-2xl">
           <h1 className="font-sans text-3xl font-semibold flex items-center">
@@ -74,7 +93,7 @@ const LandingPage: React.FC = () => {
         <p>{hookDetails[currentHook]}</p>
         <div>{hookExamples[currentHook]}</div>
       </Modal>
-    </>
+    </div>
   );
 };
 
