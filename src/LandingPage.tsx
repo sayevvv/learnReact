@@ -35,9 +35,7 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div className={`flex flex-col items-center justify-center min-h-screen transition-colors duration-300 ${
-      theme === "light" ? "bg-white" : "bg-gray-900"
-    }`}>
+    <div className={`min-h-screen transition-colors duration-300 ${theme}`}>
       <NavBar />
       <div className="flex flex-col items-center justify-center min-h-screen transition-colors duration-300">
         <h1 className="text-3xl font-bold mb-4">
@@ -45,7 +43,7 @@ const LandingPage: React.FC = () => {
         </h1>
         <button
           className={`px-4 py-2 rounded ${
-            theme === "light"
+            theme === "bg-slate-900 text-slate-50"
               ? "bg-blue-500 text-white hover:bg-blue-600"
               : "bg-gray-800 text-gray-200 hover:bg-gray-700"
           }`}
